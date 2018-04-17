@@ -1,0 +1,22 @@
+
+
+
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Birthdate</th>
+      <th>Single ?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of list">
+      <td>{{ person.id }}</td>
+      <td>{{ person.name }}</td>
+      <td>{{ person.birthdate | date:'dd/MM/yyyy' }}</td>
+      <td>{{ person.single }}</td>
+    </tr>
+  </tbody>
+</table>
