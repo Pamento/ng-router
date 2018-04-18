@@ -20,3 +20,22 @@
     </tr>
   </tbody>
 </table>
+
+<form (submit)="addPerson()" #form="ngForm">
+  <p>
+    <label>Name : </label>
+    <input type="text" name="name" [(ngModel)]="formPerson.name"
+    minlength="2" required #name="ngModel">
+    
+  </p>
+  <p>
+    <label>Birthdate : </label>
+    <input type="date" name="birthdate" required [(ngModel)]="formPerson.birthdate">
+  </p>
+  <p>
+    <label>Single : </label>
+    <input type="checkbox" name="single" [(ngModel)]="formPerson.single">
+  </p>
+  <button [disabled]="form.invalid" >Add</button>
+  {{form.valid | json}}
+</form>
