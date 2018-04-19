@@ -8,8 +8,8 @@ import { Person } from "../entities/person";
 })
 export class ParentComponent implements OnInit {
 
-  person:Person[] = [
-    {id: 1, name: 'Ludovic', birthdate:new Date(), single:true},
+  persons:Person[] = [
+    {id: 1, name: 'ludovic', birthdate:new Date(), single:true},
     {id: 2, name: 'Pawel', birthdate:new Date(), single:true},
     {id: 3, name: 'Thierry', birthdate:new Date(), single:false},
   ];

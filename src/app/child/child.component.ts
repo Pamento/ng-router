@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
-// import { Person } from "../entities/person";
+import { Person } from "../entities/person";
 
 @Component({
   selector: 'app-child',
@@ -11,6 +11,7 @@ import { Input } from '@angular/core';
 export class ChildComponent implements OnInit {
 
   @Input() name: String
+  @Input() birth: Date
 
   constructor() { }
 
