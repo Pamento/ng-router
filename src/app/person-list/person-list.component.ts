@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../entities/person';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-person-list',
@@ -7,17 +8,14 @@ import { Person } from '../entities/person';
   styleUrls: ['./person-list.component.scss']
 })
 export class PersonListComponent implements OnInit {
-  list:Person[] = [
-    {id: 1,name: 'ludovic',birthdate:new Date(),single:true},
-    {id: 2,name: 'Pawel',birthdate:new Date(),single:true},
-    {id: 3,name: 'Thierry',birthdate:new Date(),single:false},
-  ];
+
+  list:Person[]
 
   formPerson = { name: '', birthdate: '', single: false};
 
 
   addPerson(): void {
-    this.list.push({
+    this.storageService.addPerson({
       id:4,
       name: this.formPerson.name,
       birthdate: new Date(this.formPerson.birthdate),
@@ -25,9 +23,9 @@ export class PersonListComponent implements OnInit {
     });
   }
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
+    this.list = this.storageService.allPersons()
   }
-
 }

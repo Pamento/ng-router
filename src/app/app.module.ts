@@ -8,6 +8,8 @@ import { PersonListComponent } from './person-list/person-list.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 
+import { StorageService } from "./services/storage.service";
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { ChildComponent } from './child/child.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

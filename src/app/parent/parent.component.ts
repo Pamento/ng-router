@@ -14,7 +14,9 @@ export class ParentComponent implements OnInit {
     {id: 3, name: 'Thierry', birthdate:new Date(), single:false},
   ];
 
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit() {
   }
