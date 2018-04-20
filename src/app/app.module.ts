@@ -14,7 +14,6 @@ import { IndexComponent } from './index/index.component';
 import { NestedComponent } from './nested/nested.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
