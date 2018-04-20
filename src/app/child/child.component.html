@@ -1,4 +1,5 @@
 <p>
-  {{ name }} né(e) le {{ birth | date:'dd/MM/yyyy' }}
+  {{ person.name }} né(e) le {{ person.birthdate | date:'dd/MM/yyyy' }}
 </p>
 <input type="button" value="click me !" (click)="onClick()">
+<input type="checkbox" (change)="onCheckboxChange()" [checked]="person.single">

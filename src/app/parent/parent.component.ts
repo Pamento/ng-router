@@ -9,7 +9,7 @@ import { Person } from "../entities/person";
 export class ParentComponent implements OnInit {
 
   persons:Person[] = [
-    {id: 1, name: 'ludovic', birthdate:new Date(), single:true},
+    {id: 1, name: 'Ludovic', birthdate:new Date(), single:true},
     {id: 2, name: 'Pawel', birthdate:new Date(), single:true},
     {id: 3, name: 'Thierry', birthdate:new Date(), single:false},
   ];
@@ -23,5 +23,18 @@ export class ParentComponent implements OnInit {
 
   onChange(event){
     console.log(event)
+  }
+
+  onClickOnCheckbox(person){
+    let i = 0
+    while (true) {
+      if (this.persons[i].id === person.id) {
+        this.persons[i] = person
+        break
+      }
+      i++
+    }
+
+    console.log(this.persons)
   }
 }

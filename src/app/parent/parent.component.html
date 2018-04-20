@@ -1,8 +1,8 @@
 <div>
   <app-child 
-  [name]="person.name"
-  [birth]="person.birthdate"
+  [person]="person"
   *ngFor="let person of persons"
-  (change)="onChange($event)"
+  (clickOnButton)="onChange($event)"
+  (clickOnCheckbox)="onClickOnCheckbox($event)"
   ></app-child>
 </div>

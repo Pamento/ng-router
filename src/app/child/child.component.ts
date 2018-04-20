@@ -9,10 +9,10 @@ import { Person } from "../entities/person";
 
 export class ChildComponent implements OnInit {
 
-  @Input() name: string
-  @Input() birth: Date
+  @Input() person: Person
 
-  @Output() change: EventEmitter<string> = new EventEmitter<string>()
+  @Output() clickOnButton: EventEmitter<string> = new EventEmitter<string>()
+  @Output() clickOnCheckbox: EventEmitter<Person> = new EventEmitter<Person>()
 
   constructor() { }
 
@@ -20,7 +20,12 @@ export class ChildComponent implements OnInit {
   }
 
   onClick(){
-    this.change.emit(this.name)
+    this.clickOnButton.emit(this.person.name)
+  }
+
+  onCheckboxChange(){
+    this.person.single = !this.person.single
+    this.clickOnCheckbox.emit(this.person)
   }
 
 }
