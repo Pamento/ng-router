@@ -1,3 +1,8 @@
 <div>
-  <app-child [name]="person.name" [birth]="person.birthdate" *ngFor="let person of persons"></app-child>
+  <app-child 
+  [name]="person.name"
+  [birth]="person.birthdate"
+  *ngFor="let person of persons"
+  (change)="onChange($event)"
+  ></app-child>
 </div>

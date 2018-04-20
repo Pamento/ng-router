@@ -21,4 +21,7 @@ export class ParentComponent implements OnInit {
   ngOnInit() {
   }
 
+  onChange(event){
+    console.log(event)
+  }
 }

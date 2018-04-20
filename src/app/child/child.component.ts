@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Person } from "../entities/person";
 
 @Component({
@@ -10,12 +9,18 @@ import { Person } from "../entities/person";
 
 export class ChildComponent implements OnInit {
 
-  @Input() name: String
+  @Input() name: string
   @Input() birth: Date
+
+  @Output() change: EventEmitter<string> = new EventEmitter<string>()
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onClick(){
+    this.change.emit(this.name)
   }
 
 }
