@@ -9,6 +9,10 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 
 import { StorageService } from "./services/storage.service";
+import { RoutesModule } from './routes.module';
+import { IndexComponent } from './index/index.component';
+import { NestedComponent } from './nested/nested.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -17,11 +21,15 @@ import { StorageService } from "./services/storage.service";
     FirstComponent,
     PersonListComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    IndexComponent,
+    NestedComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RoutesModule
   ],
   providers: [StorageService],
   bootstrap: [AppComponent]

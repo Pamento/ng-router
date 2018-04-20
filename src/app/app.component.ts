@@ -4,10 +4,8 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: 'app-root',
-    template: `<app-parent></app-parent>
-               <p>{{maVariable}}</p>
-               <app-person-list></app-person-list>`
+    template: `<h1>Angular router</h1>
+               <router-outlet></router-outlet>
+               `
 })
-export class AppComponent {
-    maVariable:string = 'truc';
-}
+export class AppComponent {}
